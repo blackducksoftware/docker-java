@@ -352,6 +352,30 @@
 				</plugins>
 			</build>
 		</profile>
+		<profile>
+		<id>snapshot-deployment</id>
+		<activation>
+			<activeByDefault>false</activeByDefault>
+		</activation>
+		<distributionManagement>
+			<snapshotRepository>
+			<id>bds-artifactory</id>
+			<url>${snapshotArtifactoryUrl}</url>
+			</snapshotRepository>
+		</distributionManagement>
+		</profile>
+		<profile>
+		<id>deployment</id>
+		<activation>
+			<activeByDefault>false</activeByDefault>
+		</activation>
+		<distributionManagement>
+			<repository>
+			<id>bds-artifactory</id>
+			<url>${releaseArtifactoryUrl}</url>
+			</repository>
+		</distributionManagement>
+		</profile>
 	</profiles>
 
 </project>
